@@ -8,7 +8,7 @@ class Fox(Animal):
     def action(self):
         x, y = self.rand_direction()
         if self.get_board().checkIfFieldIsOccupied(x, y):
-            if self.get_board().get_organism_on_field(x, y).get_strength() <= self.get_strength():
+            if  self.get_board().get_organism_on_field(x, y).get_strength() is not None and self.get_board().get_organism_on_field(x, y).get_strength() <= self.get_strength():
                 self.collision(x, y)
         else:
             self.make_move(x, y)

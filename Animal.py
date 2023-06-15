@@ -35,7 +35,8 @@ class Animal(Organism):
         self.get_board().set_comment_y(self.get_board().get_comment_y() + 30)
 
         self.set_move(False)
-        self.get_board().get_organism_on_field(x, y).set_move(False)
+        if self.get_board().get_organism_on_field(x, y) is not None:
+            self.get_board().get_organism_on_field(x, y).set_move(False)
         position = self.get_board().check_if_space(x, y)
         if position[0] != -1 and position[1] != -1:
             self.get_board().get_organism().append(self.__class__(self.get_img(), self.get_strength(), self.get_initiative(), position[0], position[1], self.get_board(), False))

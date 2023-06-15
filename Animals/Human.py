@@ -6,45 +6,44 @@ import random
 class Human(Animal):
     def __init__(self, img, strength, initiative, x, y, board, move):
         super().__init__(img, strength, initiative, x, y, board, move)
-        self.directions = {
+        self.__directions = {
             "RIGHT": 0,
             "LEFT": 1,
             "DOWN": 2,
             "UP": 3,
             "NONE": 4
         }
-        self.direction = self.directions["NONE"]
-        self.ability = False
-        self.time_to_end_ability = 5
-        self.time_to_activate_ability = 0
+        self.__direction = self.__directions["NONE"]
+        self.__ability = False
+        self.__time_to_end_ability = 5
+        self.__time_to_activate_ability = 0
 
     def get_time_to_end_ability(self):
-        return self.time_to_end_ability
+        return self.__time_to_end_ability
 
     def set_time_to_end_ability(self, time):
-        self.time_to_end_ability = time
+        self.__time_to_end_ability = time
 
     def get_time_to_activate_ability(self):
-        return self.time_to_activate_ability
+        return self.__time_to_activate_ability
 
     def set_time_to_activate_ability(self, time):
-        self.time_to_activate_ability = time
+        self.__time_to_activate_ability = time
 
     def get_ability(self):
-        return self.ability
+        return self.__ability
 
     def set_ability(self, ability):
-        self.ability = ability
-
+        self.__ability = ability
 
     def get_direction(self):
-        return self.direction
+        return self.__direction
 
     def set_direction(self, direction):
-        self.direction = self.directions[direction]
+        self.__direction = self.__directions[direction]
 
     def get_directions(self):
-        return self.directions
+        return self.__directions
 
     def action(self):
         counter = 1

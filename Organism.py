@@ -4,55 +4,55 @@ import random
 
 class Organism(ABC):
     def __init__(self, img, strength, initiative, x, y, board, move):
-        self.img = img
-        self.strength = strength
-        self.initiative = initiative
-        self.x = x
-        self.y = y
-        self.board = board
-        self.move = move
+        self._img = img
+        self._strength = strength
+        self._initiative = initiative
+        self._x = x
+        self._y = y
+        self._board = board
+        self._move = move
 
     def get_img(self):
-        return self.img
+        return self._img
 
     def get_strength(self):
-        return self.strength
+        return self._strength
 
     def get_initiative(self):
-        return self.initiative
+        return self._initiative
 
     def get_x(self):
-        return self.x
+        return self._x
 
     def get_y(self):
-        return self.y
+        return self._y
 
     def get_board(self):
-        return self.board
+        return self._board
 
     def get_move(self):
-        return self.move
+        return self._move
 
     def set_img(self, img):
-        self.img = img
+        self._img = img
 
     def set_strength(self, strength):
-        self.strength = strength
+        self._strength = strength
 
     def set_initiative(self, initiative):
-        self.initiative = initiative
+        self._initiative = initiative
 
     def set_x(self, x):
-        self.x = x
+        self._x = x
 
     def set_y(self, y):
-        self.y = y
+        self._y = y
 
     def set_board(self, board):
-        self.board = board
+        self._board = board
 
     def set_move(self, move):
-        self.move = move
+        self._move = move
 
     def rand_direction(self):
         while True:
